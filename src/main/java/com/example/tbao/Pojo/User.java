@@ -6,6 +6,7 @@ public class User implements Serializable {
     private Integer id;
     private String username;
     private String password;
+    private String name;
     private Integer state;
     private String  phone;
     private String email;
@@ -13,18 +14,20 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String username, String password, Integer state, String phone, String email) {
+    public User(String username, String password, String name, Integer state, String phone, String email) {
         this.username = username;
         this.password = password;
+        this.name = name;
         this.state = state;
         this.phone = phone;
         this.email = email;
     }
 
-    public User(Integer id, String username, String password, Integer state, String phone, String email) {
+    public User(Integer id, String username, String password, String name, Integer state, String phone, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.name = name;
         this.state = state;
         this.phone = phone;
         this.email = email;
@@ -52,6 +55,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getState() {
@@ -84,6 +95,7 @@ public class User implements Serializable {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
                 ", state=" + state +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

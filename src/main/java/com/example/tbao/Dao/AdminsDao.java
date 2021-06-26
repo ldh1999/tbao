@@ -10,5 +10,5 @@ public interface AdminsDao {
     public Integer updateStateById(int id,int state);
     public Admins selectAll();
     public Admins selectById(int id);
-    public Admins seleteByUsername(String username);
+    public Admins selectByUsername(String username);
 }

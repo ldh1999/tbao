@@ -16,7 +16,7 @@
     <select id="selectById" resultType="com.example.tbao.Pojo.Admins">
         select * from admin where id=#{id};
     </select>
-    <select id="seleteByUsername" resultType="com.example.tbao.Pojo.Admins">
+    <select id="selectByUsername" resultType="com.example.tbao.Pojo.Admins">
         select * from admin where username=#{username};
     </select>
 </mapper>

@@ -1,14 +1,18 @@
 package com.example.tbao.Dao;
 
 import com.example.tbao.Pojo.Admins;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
+@Mapper
 public interface AdminsDao {
-    public Integer insert(Admins admins);
-    public Integer deleteById(int id);
-    public Integer updateStateById(int id,int state);
-    public Admins selectAll();
-    public Admins selectById(int id);
-    public Admins selectByUsername(String username);
+    Integer insert(Admins admins);
+    Integer deleteById(int id);
+    Integer updateStateById(int id,int state);
+    List<Admins> selectAll();
+    Admins selectById(int id);
+    Admins selectByUsername(String username);
 }

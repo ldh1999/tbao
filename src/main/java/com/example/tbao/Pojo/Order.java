@@ -11,15 +11,15 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Integer commondityId, Integer userId, Integer num) {
-        this.commodityId = commondityId;
+    public Order(Integer commodityId, Integer userId, Integer num) {
+        this.commodityId = commodityId;
         this.userId = userId;
         this.num = num;
     }
 
-    public Order(Integer id, Integer commondityId, Integer userId, Integer num) {
+    public Order(Integer id, Integer commodityId, Integer userId, Integer num) {
         this.id = id;
-        this.commodityId = commondityId;
+        this.commodityId = commodityId;
         this.userId = userId;
         this.num = num;
     }
@@ -36,8 +36,8 @@ public class Order implements Serializable {
         return commodityId;
     }
 
-    public void setCommondityId(Integer commondityId) {
-        this.commodityId = commondityId;
+    public void setCommondityId(Integer commodityId) {
+        this.commodityId = commodityId;
     }
 
     public Integer getUserId() {
@@ -60,7 +60,7 @@ public class Order implements Serializable {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", commondityId=" + commodityId +
+                ", commodityId=" + commodityId +
                 ", userId=" + userId +
                 ", num=" + num +
                 '}';

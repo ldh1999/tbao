@@ -30,6 +30,9 @@ class TbaoApplicationTests {
     @Autowired
     private RepertoryDao repertoryDao;
 
+    @Autowired
+    private OrderDao orderDao;
+
     @Test
     void contextLoads() {
     }
@@ -92,6 +95,16 @@ class TbaoApplicationTests {
         log.info(repertoryDao.updateNumById(48,2).toString());
         log.info(repertoryDao.selectById(1).toString());
         log.info(repertoryDao.deleteById(1).toString());
+    }
+
+    @Test
+    void OrderDaoTest(){
+        //log.info(orderDao.insert(new Order(2,4,2)).toString());
+        log.info(orderDao.selectAll().toString());
+        log.info(orderDao.selectByCid(2).toString());
+        log.info(orderDao.selectByUid(4).toString());
+        log.info(orderDao.updateNumById(50,2).toString());
+        log.info(orderDao.deleteById(1).toString());
     }
 
 }

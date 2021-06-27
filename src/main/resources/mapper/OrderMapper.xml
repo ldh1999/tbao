@@ -11,12 +11,12 @@
         update `order` set num=#{num} where id=#{id};
     </update>
     <select id="selectAll" resultType="com.example.tbao.Pojo.Order">
-        select * from `order`;
+        select * from `order` order by id desc ;
     </select>
     <select id="selectByUid" resultType="com.example.tbao.Pojo.Order">
-        select * from `order`where userid=#{uid};
+        select * from `order`where userid=#{uid} order by id desc limit #{limit},#{limitNum};
     </select>
     <select id="selectByCid" resultType="com.example.tbao.Pojo.Order">
-        select * from `order` where commodityid=#{cid};
+        select * from `order` where commodityid=#{cid} order by id desc ;
     </select>
 </mapper>

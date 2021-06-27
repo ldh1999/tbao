@@ -11,7 +11,7 @@ public interface RepertoryDao {
     Integer insert(Repertory repertory);
     Integer deleteById(int id);
     Integer updateNumById(int num,int id);
-    List<Repertory> selectAll();
+    List<Repertory> selectAll(int limit,int limitNum);
     Repertory selectById(int id);
     List<Repertory> selectByCommodityId(int id);
 }

@@ -17,7 +17,7 @@ public interface CommodityDao {
     Integer updateStateById(int state ,int id);
     Integer updateImageById(String Image,int id);
     Integer updateTypeById(int type,int id);
-    List<Commodity> selectAll();
+    List<Commodity> selectAll(int limit,int limitNum);
     Commodity selectById(int id);
-    List<Commodity> selectByNameLike(String name);
+    List<Commodity> selectByNameLike(String name,int limit,int limitNum);
 }

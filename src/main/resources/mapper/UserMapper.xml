@@ -23,12 +23,12 @@
         update user set phone=#{phone} where id=#{id};
     </update>
     <select id="selectAll" resultType="com.example.tbao.Pojo.User">
-        select * from user where state=1;
+        select * from user where state=1 order by id desc limit #{limit},#{limitNum};
     </select>
     <select id="selectByUsernameOrPhoneOrEmail" resultType="com.example.tbao.Pojo.User">
         select * from user where state=1 and (username=#{information} or phone=#{information} or email=#{information});
     </select>
     <select id="selectByNameLike" resultType="com.example.tbao.Pojo.User">
-        select * from user where state=1 and name like "%"#{name}"%";
+        select * from user where state=1 and name like "%"#{name}"%" order by id desc limit #{limit},#{limitNum};
     </select>
 </mapper>

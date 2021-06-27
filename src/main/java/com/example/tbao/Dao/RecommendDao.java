@@ -13,6 +13,6 @@ public interface RecommendDao {
     Integer deleteById(int id);
     Integer deleteByCid(int cid);
     Integer updateGradeById(int grade,int id);
-    List<Recommend> selectAll();
+    List<Recommend> selectAll(int limit ,int limitNum);
     Recommend selectByCommodityId(int cid);
 }

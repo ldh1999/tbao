@@ -11,7 +11,7 @@
         update admin set state=#{state} where id=#{id};
     </update>
     <select id="selectAll" resultType="com.example.tbao.Pojo.Admins">
-        select * from admin where state=1;
+        select * from admin where state=1 order by 'id' desc limit #{limit},#{limitNum};
     </select>
     <select id="selectById" resultType="com.example.tbao.Pojo.Admins">
         select * from admin where id=#{id} and state=1;

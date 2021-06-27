@@ -12,7 +12,7 @@ public interface AdminsDao {
     Integer insert(Admins admins);
     Integer deleteById(int id);
     Integer updateStateById(int id,int state);
-    List<Admins> selectAll();
+    List<Admins> selectAll(int limit,int limitNum);
     Admins selectById(int id);
     Admins selectByUsername(String username);
 }

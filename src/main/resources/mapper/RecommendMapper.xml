@@ -14,7 +14,7 @@
         update recommend set grade=#{grade} where id=#{id};
     </update>
     <select id="selectAll" resultType="com.example.tbao.Pojo.Recommend">
-        select * from recommend order by grade desc ;
+        select * from recommend order by grade desc limit #{limit},#{limitNum};
     </select>
     <select id="selectByCommodityId" resultType="com.example.tbao.Pojo.Recommend">
         select * from recommend where commodityid=#{cid};

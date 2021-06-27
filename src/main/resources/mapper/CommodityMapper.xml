@@ -26,12 +26,12 @@
         update commodity set image=#{image} where id=#{id};
     </update>
     <select id="selectAll" resultType="com.example.tbao.Pojo.Commodity">
-        select * from commodity where state=1;
+        select * from commodity where state=1 order by id desc limit #{limit},#{limitNum};
     </select>
     <select id="selectById" resultType="com.example.tbao.Pojo.Commodity">
         select * from commodity where id=#{id} and state=1;
     </select>
     <select id="selectByNameLike" resultType="com.example.tbao.Pojo.Commodity">
-        select * from commodity where state=1 and name like "%"#{name}"%";
+        select * from commodity where state=1 and name like "%"#{name}"%" order by id desc limit #{limit},#{limitNum};
     </select>
 </mapper>

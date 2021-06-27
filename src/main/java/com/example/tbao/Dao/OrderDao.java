@@ -13,6 +13,6 @@ public interface OrderDao {
     Integer deleteById(int id);
     Integer updateNumById(int num,int id);
     List<Order> selectAll();
-    List<Order> selectByUid(int uid);
+    List<Order> selectByUid(int uid,int limit,int limitNum);
     List<Order> selectByCid(int cid);
 }

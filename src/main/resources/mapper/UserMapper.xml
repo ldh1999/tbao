@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tbao.Dao.UserDao">
+    <insert id="insert">
+        insert into user (username, password, state, phone, email,name) values (#{username},#{password},#{state},#{phone},#{email},#{name});
+    </insert>
+    <delete id="deleteById">
+        delete from user where id=#{id};
+    </delete>
+    <update id="updateStateById">
+        update user set state=#{state} where id=#{id};
+    </update>
+    <update id="updatePasswordById">
+        update user set password=#{password} where id=#{id};
+    </update>
+    <update id="updateNameById">
+        update user set name=#{name} where id=#{id};
+    </update>
+    <update id="updateEmailById">
+        update user set email=#{email} where id=#{id};
+    </update>
+    <update id="updatePhoneById">
+        update user set phone=#{phone} where id=#{id};
+    </update>
+    <select id="selectAll" resultType="com.example.tbao.Pojo.User">
+        select * from user where state=1;
+    </select>
+    <select id="selectByUsernameOrPhoneOrEmail" resultType="com.example.tbao.Pojo.User">
+        select * from user where state=1 and (username=#{information} or phone=#{information} or email=#{information});
+    </select>
+    <select id="selectByNameLike" resultType="com.example.tbao.Pojo.User">
+        select * from user where state=1 and name like "%"#{name}"%";
+    </select>
+</mapper>

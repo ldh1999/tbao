@@ -2,20 +2,20 @@ package com.example.tbao.Pojo;
 
 import java.io.Serializable;
 
-public class CommidityType implements Serializable {
+public class CommodityType implements Serializable {
     private Integer id;
     private String name;
     private Integer state;
 
-    public CommidityType() {
+    public CommodityType() {
     }
 
-    public CommidityType(String name, Integer state) {
+    public CommodityType(String name, Integer state) {
         this.name = name;
         this.state = state;
     }
 
-    public CommidityType(Integer id, String name, Integer state) {
+    public CommodityType(Integer id, String name, Integer state) {
         this.id = id;
         this.name = name;
         this.state = state;
@@ -47,7 +47,7 @@ public class CommidityType implements Serializable {
 
     @Override
     public String toString() {
-        return "CommidityType{" +
+        return "CommodityType{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", state=" + state +

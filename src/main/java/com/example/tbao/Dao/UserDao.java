@@ -15,8 +15,8 @@ public interface UserDao {
     Integer updatePasswordById(int id,String password);
     Integer updateNameById(int id,String name);
     Integer updateEmailById(int id,String email);
-    Integer updatephoneById(int id,String phone);
+    Integer updatePhoneById(int id,String phone);
     List<User> selectAll();
-    List<User> selectByUsernameOrphoneOrEmail(String information);
+    List<User> selectByUsernameOrPhoneOrEmail(String information);
     List<User> selectByNameLike(String name);
 }

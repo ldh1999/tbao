@@ -1,9 +1,11 @@
 package com.example.tbao;
 
 import com.example.tbao.Dao.AdminsDao;
+import com.example.tbao.Dao.CommodityDao;
 import com.example.tbao.Dao.CommodityTypeDao;
 import com.example.tbao.Dao.UserDao;
 import com.example.tbao.Pojo.Admins;
+import com.example.tbao.Pojo.Commodity;
 import com.example.tbao.Pojo.CommodityType;
 import com.example.tbao.Pojo.User;
 import org.junit.jupiter.api.Test;
@@ -11,6 +13,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Date;
 
 @SpringBootTest
 class TbaoApplicationTests {
@@ -25,6 +29,8 @@ class TbaoApplicationTests {
 
     @Autowired
     private CommodityTypeDao commodityTypeDao;
+    @Autowired
+    private CommodityDao commodityDao;
 
     @Test
     void contextLoads() {
@@ -64,8 +70,21 @@ class TbaoApplicationTests {
         //log.info(commodityTypeDao.updateStateById(2,0).toString());
         log.info(commodityTypeDao.selectAll().toString());
         log.info(commodityTypeDao.selectById(2).toString());
-
-
+    }
+    @Test
+    void setCommodityDaoTest(){
+        Date date=new Date();
+        log.info(commodityDao.insert(new Commodity("name", "introduce", 1, date, new CommodityType(2,"name",1), 2, 1)).toString());
+        log.info(commodityDao.selectAll().toString());
+        log.info(commodityDao.selectById(2).getIntroduce());
+        log.info(commodityDao.selectByNameLike("n").toString());
+        log.info(commodityDao.updateIntroduceById("introduce_",2).toString());
+        log.info(commodityDao.updateNameById("name_",2).toString());
+        log.info(commodityDao.updatePriceById(2,2).toString());
+        log.info(commodityDao.updateTypeById(2,2).toString());
+        //log.info(commodityDao.updateStateById(1,0).toString());
+        log.info(commodityDao.selectAll().toString());
+        //log.info(commodityDao.deleteById(1).toString());
     }
 
 }

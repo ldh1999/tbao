@@ -8,6 +8,7 @@ public class Commodity implements Serializable {
     private String name;
     private String introduce;
     private Integer price;
+    private String image;
     private Date time;
     private CommodityType commodityType;
     private Integer userId;
@@ -16,21 +17,23 @@ public class Commodity implements Serializable {
     public Commodity() {
     }
 
-    public Commodity(String name, String introduce, Integer price, Date time, CommodityType commodityType, Integer userId, Integer state) {
+    public Commodity(String name, String introduce, Integer price, String image, Date time, CommodityType commodityType, Integer userId, Integer state) {
         this.name = name;
         this.introduce = introduce;
         this.price = price;
+        this.image = image;
         this.time = time;
         this.commodityType = commodityType;
         this.userId = userId;
         this.state = state;
     }
 
-    public Commodity(Integer id, String name, String introduce, Integer price, Date time, CommodityType commodityType, Integer userId, Integer state) {
+    public Commodity(Integer id, String name, String introduce, Integer price, String image, Date time, CommodityType commodityType, Integer userId, Integer state) {
         this.id = id;
         this.name = name;
         this.introduce = introduce;
         this.price = price;
+        this.image = image;
         this.time = time;
         this.commodityType = commodityType;
         this.userId = userId;
@@ -69,6 +72,14 @@ public class Commodity implements Serializable {
         this.price = price;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Date getTime() {
         return time;
     }
@@ -81,7 +92,7 @@ public class Commodity implements Serializable {
         return commodityType;
     }
 
-    public void setCommidityType(CommodityType commodityType) {
+    public void setCommodityType(CommodityType commodityType) {
         this.commodityType = commodityType;
     }
 
@@ -108,6 +119,7 @@ public class Commodity implements Serializable {
                 ", name='" + name + '\'' +
                 ", introduce='" + introduce + '\'' +
                 ", price=" + price +
+                ", image='" + image + '\'' +
                 ", time=" + time +
                 ", commodityType=" + commodityType +
                 ", userId=" + userId +

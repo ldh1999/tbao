@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tbao.Dao.RepertoryDao">
+    <insert id="insert">
+        insert into repertory (num,commodityid) values (#{num},#{commodityId});
+    </insert>
+    <delete id="deleteById">
+        delete from repertory where id=#{id};
+    </delete>
+    <update id="updateNumById">
+        update repertory set num=#{num} where id=#{id};
+    </update>
+    <select id="selectAll" resultType="com.example.tbao.Pojo.Repertory">
+        select * from repertory;
+    </select>
+    <select id="selectById" resultType="com.example.tbao.Pojo.Repertory">
+        select * from repertory where id=#{id};
+    </select>
+    <select id="selectByCommodityId" resultType="com.example.tbao.Pojo.Repertory">
+        select * from repertory where commodityid=#{id};
+    </select>
+</mapper>

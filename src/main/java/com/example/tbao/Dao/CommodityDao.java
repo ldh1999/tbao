@@ -15,6 +15,7 @@ public interface CommodityDao {
     Integer updateIntroduceById(String introduce,int id);
     Integer updatePriceById(int price,int id);
     Integer updateStateById(int state ,int id);
+    Integer updateImageById(String Image,int id);
     Integer updateTypeById(int type,int id);
     List<Commodity> selectAll();
     Commodity selectById(int id);

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tbao.Dao.RecommendDao">
+    <insert id="insert">
+        insert into recommend (commodityid, grade) value (#{commodityId},#{grade});
+    </insert>
+    <delete id="deleteById">
+        delete from recommend where id=#{id};
+    </delete>
+    <delete id="deleteByCid">
+        delete from recommend where commodityid=#{cid};
+    </delete>
+    <update id="updateGradeById">
+        update recommend set grade=#{grade} where id=#{id};
+    </update>
+    <select id="selectAll" resultType="com.example.tbao.Pojo.Recommend">
+        select * from recommend order by grade desc ;
+    </select>
+    <select id="selectByCommodityId" resultType="com.example.tbao.Pojo.Recommend">
+        select * from recommend where commodityid=#{cid};
+    </select>
+</mapper>

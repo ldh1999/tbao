@@ -33,6 +33,9 @@ class TbaoApplicationTests {
     @Autowired
     private OrderDao orderDao;
 
+    @Autowired
+    private RecommendDao recommendDao;
+
     @Test
     void contextLoads() {
     }
@@ -105,6 +108,16 @@ class TbaoApplicationTests {
         log.info(orderDao.selectByUid(4).toString());
         log.info(orderDao.updateNumById(50,2).toString());
         log.info(orderDao.deleteById(1).toString());
+    }
+
+    @Test
+    void RecommendDaoTest(){
+//        log.info(recommendDao.insert(new Recommend(2,5)).toString());
+//        log.info(recommendDao.insert(new Recommend(3,3)).toString());
+//        log.info(recommendDao.insert(new Recommend(2,4)).toString());
+        log.info(recommendDao.selectAll().toString());
+        log.info(recommendDao.selectByCommodityId(2).toString());
+        log.info(recommendDao.selectAll().toString());
     }
 
 }

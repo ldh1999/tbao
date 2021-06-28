@@ -11,24 +11,24 @@ public class Commodity implements Serializable {
     private String image;
     private Date time;
     private CommodityType commodityType;
-    private Integer userId;
+    private Integer merchantId;
     private Integer state;
 
     public Commodity() {
     }
 
-    public Commodity(String name, String introduce, Integer price, String image, Date time, CommodityType commodityType, Integer userId, Integer state) {
+    public Commodity(String name, String introduce, Integer price, String image, Date time, CommodityType commodityType, Integer merchantId, Integer state) {
         this.name = name;
         this.introduce = introduce;
         this.price = price;
         this.image = image;
         this.time = time;
         this.commodityType = commodityType;
-        this.userId = userId;
+        this.merchantId = merchantId;
         this.state = state;
     }
 
-    public Commodity(Integer id, String name, String introduce, Integer price, String image, Date time, CommodityType commodityType, Integer userId, Integer state) {
+    public Commodity(Integer id, String name, String introduce, Integer price, String image, Date time, CommodityType commodityType, Integer merchantId, Integer state) {
         this.id = id;
         this.name = name;
         this.introduce = introduce;
@@ -36,7 +36,7 @@ public class Commodity implements Serializable {
         this.image = image;
         this.time = time;
         this.commodityType = commodityType;
-        this.userId = userId;
+        this.merchantId = merchantId;
         this.state = state;
     }
 
@@ -96,12 +96,12 @@ public class Commodity implements Serializable {
         this.commodityType = commodityType;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getmerchantId() {
+        return merchantId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setmerchantId(Integer merchantId) {
+        this.merchantId = merchantId;
     }
 
     public Integer getState() {
@@ -122,7 +122,7 @@ public class Commodity implements Serializable {
                 ", image='" + image + '\'' +
                 ", time=" + time +
                 ", commodityType=" + commodityType +
-                ", userId=" + userId +
+                ", merchantId=" + merchantId +
                 ", state=" + state +
                 '}';
     }

@@ -20,4 +20,5 @@ public interface CommodityDao {
     List<Commodity> selectAll(int limit,int limitNum);
     Commodity selectById(int id);
     List<Commodity> selectByNameLike(String name,int limit,int limitNum);
+    List<Commodity> selectByMerchantId(int merchantId,int limit,int limitNum);
 }

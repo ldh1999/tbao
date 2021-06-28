@@ -38,6 +38,9 @@ class TbaoApplicationTests {
     @Autowired
     private RecommendDao recommendDao;
 
+    @Autowired
+    private MerchantDao merchantDao;
+
     @Test
     void contextLoads() {
     }
@@ -57,7 +60,7 @@ class TbaoApplicationTests {
 
     @Test
     void userDaoTest(){
-        //log.info(userDao.insert(new User("username", "password", "name", 1, "phone", "email")).toString());
+        log.info(userDao.insert(new User("username", "password", "name","image", 1, "phone", "email")).toString());
 
         log.info(userDao.selectAll(0,4).toString());
         log.info(userDao.selectByNameLike("n",0,4).toString());
@@ -80,13 +83,14 @@ class TbaoApplicationTests {
         log.info(commodityTypeDao.selectById(2).toString());
     }
     @Test
-    void setCommodityDaoTest(){
+    void CommodityDaoTest(){
         Date date=new Date();
-        for (int i=0;i<5;i++){
-            log.info(commodityDao.insert(new Commodity("name", "introduce", 1,"image", date, new CommodityType(2,"name",1), 2, 1)).toString());
-        }
-        commodityDao.selectAll(0,5).forEach(x-> log.info(x.toString()));
-        commodityDao.selectByNameLike("n",0,5).forEach(x->log.info(x.toString()));
+        /*for (int i=0;i<5;i++){
+            log.info(commodityDao.insert(new Commodity("name", "introduce", 1,"image", date, new CommodityType(2,"name",1), 1, 1)).toString());
+        }*/
+        /*commodityDao.selectAll(0,5).forEach(x-> log.info(x.toString()));
+        commodityDao.selectByNameLike("n",0,5).forEach(x->log.info(x.toString()));*/
+        commodityDao.selectByMerchantId(1,0,10).forEach(x-> log.info(x.toString()));
         /*log.info(commodityDao.selectAll(0,5).toString());
         log.info(commodityDao.selectById(2).getIntroduce());
         log.info(commodityDao.selectByNameLike("n",0,5).toString());
@@ -126,6 +130,17 @@ class TbaoApplicationTests {
         log.info(recommendDao.selectAll(0,4).toString());
         log.info(recommendDao.selectByCommodityId(2).toString());
         log.info(recommendDao.selectAll(0,4).toString());
+    }
+    @Test
+    void MerchantTest(){
+        merchantDao.insert(new Merchant("name", "image", 1,2));
+        merchantDao.updateImageById("_image",1);
+        merchantDao.updateNameById("_name",1);
+        System.out.println(merchantDao.selectById(1));
+        System.out.println(merchantDao.selectByNameLike("_",0,15).toString());
+        System.out.println(merchantDao.selectByUid(2).toString());
+        merchantDao.updateStateById(0,1);
+
     }
 
 }

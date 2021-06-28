@@ -7,6 +7,7 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String name;
+    private String image;
     private Integer state;
     private String  phone;
     private String email;
@@ -14,20 +15,22 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String username, String password, String name, Integer state, String phone, String email) {
+    public User(String username, String password, String name, String image, Integer state, String phone, String email) {
         this.username = username;
         this.password = password;
         this.name = name;
+        this.image = image;
         this.state = state;
         this.phone = phone;
         this.email = email;
     }
 
-    public User(Integer id, String username, String password, String name, Integer state, String phone, String email) {
+    public User(Integer id, String username, String password, String name, String image, Integer state, String phone, String email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
+        this.image = image;
         this.state = state;
         this.phone = phone;
         this.email = email;
@@ -65,6 +68,14 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Integer getState() {
         return state;
     }
@@ -96,6 +107,7 @@ public class User implements Serializable {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
                 ", state=" + state +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +

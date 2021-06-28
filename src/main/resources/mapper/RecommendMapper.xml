@@ -19,4 +19,7 @@
     <select id="selectByCommodityId" resultType="com.example.tbao.Pojo.Recommend">
         select * from recommend where commodityid=#{cid};
     </select>
+    <select id="countAll" resultType="int">
+        select count(*) from recommend;
+    </select>
 </mapper>

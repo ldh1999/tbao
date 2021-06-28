@@ -19,4 +19,7 @@
     <select id="selectByUsername" resultType="com.example.tbao.Pojo.Admins">
         select * from admin where username=#{username} and state=1;
     </select>
+    <select id="countAll" resultType="int">
+        select count(*) from admin where state=1;
+    </select>
 </mapper>

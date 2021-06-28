@@ -14,5 +14,6 @@ public interface RecommendDao {
     Integer deleteByCid(int cid);
     Integer updateGradeById(int grade,int id);
     List<Recommend> selectAll(int limit ,int limitNum);
+    Integer countAll();
     Recommend selectByCommodityId(int cid);
 }

@@ -49,18 +49,19 @@ class TbaoApplicationTests {
     void adminsDaoTest(){
 
         //log.info(adminsDao.insert(new Admins("username","password",1)).toString());
-        log.info(adminsDao.selectAll(0,5).toString());
+        //log.info(adminsDao.selectAll(0,5).toString());
 //        log.info(adminsDao.selectById(1).toString());
 //        log.info(adminsDao.selectByUsername("username").toString());
 //        log.info(adminsDao.selectAll(0,5).toString());
 //        log.info(adminsDao.updateStateById(1,0).toString());
 //        log.info(adminsDao.selectAll(0,5).toString());
-        adminsDao.selectAll(0,5).forEach(x->log.info(x.toString()));
+       //adminsDao.selectAll(0,5).forEach(x->log.info(x.toString()));
+        log.info(adminsDao.countAll().toString());
     }
 
     @Test
     void userDaoTest(){
-        log.info(userDao.insert(new User("username", "password", "name","image", 1, "phone", "email")).toString());
+        /*log.info(userDao.insert(new User("username", "password", "name","image", 1, "phone", "email")).toString());
 
         log.info(userDao.selectAll(0,4).toString());
         log.info(userDao.selectByNameLike("n",0,4).toString());
@@ -71,7 +72,9 @@ class TbaoApplicationTests {
         log.info(userDao.updatePhoneById(2,"phone_").toString());
         log.info(userDao.updateStateById(2,0).toString());
         log.info(userDao.selectAll(0,4).toString());
-        log.info(userDao.deleteById(1).toString());
+        log.info(userDao.deleteById(1).toString());*/
+        System.out.println(userDao.countAll());
+        System.out.println(userDao.countByNameLike("n"));
     }
 
     @Test
@@ -91,6 +94,9 @@ class TbaoApplicationTests {
         /*commodityDao.selectAll(0,5).forEach(x-> log.info(x.toString()));
         commodityDao.selectByNameLike("n",0,5).forEach(x->log.info(x.toString()));*/
         commodityDao.selectByMerchantId(1,0,10).forEach(x-> log.info(x.toString()));
+        System.out.println(commodityDao.countAll());
+        System.out.println(commodityDao.countByMerchantId(1));
+        System.out.println(commodityDao.countByNameLike("45"));
         /*log.info(commodityDao.selectAll(0,5).toString());
         log.info(commodityDao.selectById(2).getIntroduce());
         log.info(commodityDao.selectByNameLike("n",0,5).toString());
@@ -105,9 +111,10 @@ class TbaoApplicationTests {
 
     @Test
     void RepertoryDaoTest(){
-        log.info(repertoryDao.insert(new Repertory(50,2)).toString());
+        /*log.info(repertoryDao.insert(new Repertory(50,2)).toString());
         log.info(repertoryDao.selectAll(0,4).toString());
-        log.info(repertoryDao.updateNumById(48,2).toString());
+        log.info(repertoryDao.updateNumById(48,2).toString());*/
+        System.out.println(repertoryDao.countAll());
         /*log.info(repertoryDao.selectById(1).toString());
         log.info(repertoryDao.deleteById(1).toString());*/
     }
@@ -115,11 +122,12 @@ class TbaoApplicationTests {
     @Test
     void OrderDaoTest(){
         //log.info(orderDao.insert(new Order(2,4,2)).toString());
-        log.info(orderDao.selectAll().toString());
+        /*log.info(orderDao.selectAll().toString());
         log.info(orderDao.selectByCid(2).toString());
         log.info(orderDao.selectByUid(4,0,4).toString());
         log.info(orderDao.updateNumById(50,2).toString());
-        log.info(orderDao.deleteById(1).toString());
+        log.info(orderDao.deleteById(1).toString());*/
+        System.out.println(orderDao.countByUid(4));
     }
 
     @Test
@@ -127,19 +135,21 @@ class TbaoApplicationTests {
 //        log.info(recommendDao.insert(new Recommend(2,5)).toString());
 //        log.info(recommendDao.insert(new Recommend(3,3)).toString());
 //        log.info(recommendDao.insert(new Recommend(2,4)).toString());
-        log.info(recommendDao.selectAll(0,4).toString());
+        /*log.info(recommendDao.selectAll(0,4).toString());
         log.info(recommendDao.selectByCommodityId(2).toString());
-        log.info(recommendDao.selectAll(0,4).toString());
+        log.info(recommendDao.selectAll(0,4).toString());*/
+        System.out.println(recommendDao.countAll());
     }
     @Test
     void MerchantTest(){
-        merchantDao.insert(new Merchant("name", "image", 1,2));
+        /*merchantDao.insert(new Merchant("name", "image", 1,2));
         merchantDao.updateImageById("_image",1);
         merchantDao.updateNameById("_name",1);
         System.out.println(merchantDao.selectById(1));
         System.out.println(merchantDao.selectByNameLike("_",0,15).toString());
         System.out.println(merchantDao.selectByUid(2).toString());
-        merchantDao.updateStateById(0,1);
+        merchantDao.updateStateById(0,1);*/
+        System.out.println(merchantDao.countByNameLike("_"));
 
     }
 

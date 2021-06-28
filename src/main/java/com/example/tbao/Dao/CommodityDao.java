@@ -18,7 +18,10 @@ public interface CommodityDao {
     Integer updateImageById(String Image,int id);
     Integer updateTypeById(int type,int id);
     List<Commodity> selectAll(int limit,int limitNum);
+    Integer countAll();
     Commodity selectById(int id);
     List<Commodity> selectByNameLike(String name,int limit,int limitNum);
+    Integer countByNameLike(String name);
     List<Commodity> selectByMerchantId(int merchantId,int limit,int limitNum);
+    Integer countByMerchantId(int merchantId);
 }

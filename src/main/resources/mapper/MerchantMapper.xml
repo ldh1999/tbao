@@ -25,5 +25,8 @@
     <select id="selectByNameLike" resultType="com.example.tbao.Pojo.Merchant">
         select * from merchant where state=1 and name like "%"#{name}"%" order by id desc limit #{limit},#{limitNum};
     </select>
+    <select id="countByNameLike" resultType="int">
+        select count(*) from merchant where state=1 and name like "%"#{name}"%";
+    </select>
 
 </mapper>

@@ -37,4 +37,13 @@
     <select id="selectByMerchantId" resultType="com.example.tbao.Pojo.Commodity">
         select * from commodity where state=1 and merchantid=#{merchantId} order by id desc limit #{limit},#{limitNum};
     </select>
+    <select id="countAll" resultType="int">
+        select count(*) from commodity where state=1;
+    </select>
+    <select id="countByNameLike" resultType="int">
+        select count(*) from commodity where state=1 and name like "%"#{name}"%";
+    </select>
+    <select id="countByMerchantId" resultType="int">
+        select count(*) from commodity where state=1 and merchantid=#{merchantId};
+    </select>
 </mapper>

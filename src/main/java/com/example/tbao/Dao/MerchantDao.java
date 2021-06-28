@@ -17,4 +17,5 @@ public interface MerchantDao {
     Merchant selectById(int id);
     List<Merchant> selectByUid(int uid);
     List<Merchant> selectByNameLike(String name,int limit,int limitNum);
+    Integer countByNameLike(String name);
 }

@@ -15,4 +15,5 @@ public interface AdminsDao {
     List<Admins> selectAll(int limit,int limitNum);
     Admins selectById(int id);
     Admins selectByUsername(String username);
+    Integer countAll();
 }
